@@ -17,11 +17,13 @@ Jeweler::Tasks.new do |gem|
   gem.name = "health_graph"
   gem.homepage = "http://github.com/kennyma/health_graph"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "Ruby gem for RunKeeper Health Graph API"
+  gem.description = "This is a wrapper for RunKeeper Health Graph RESTful API."
   gem.email = "kenny@kennyma.me"
   gem.authors = ["Kenny Ma"]
   # dependencies defined in Gemfile
+  gem.add_dependency 'oauth2', '= 0.5.0'
+  gem.add_dependency 'faraday', '= 0.7.4'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
