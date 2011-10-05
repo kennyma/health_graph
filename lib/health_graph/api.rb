@@ -3,19 +3,19 @@ module HealthGraph
     attr_accessor :access_token
     
     def get(path, accept_header, params = {})
-      request(:get, path, params)
+      request(:get, accept_header, path, params)
     end
     
     def post(path, accept_header, params = {})
-      request(:post, path, params)
+      request(:post, accept_header, path, params)
     end
     
     def put(path, accept_header, params = {})
-      request(:put, path, params)
+      request(:put, accept_header, path, params)
     end
     
     def delete(path, accept_header, params = {}) 
-      request(:delete, path, params)
+      request(:delete, accept_header, path, params)
     end
 
     private 
@@ -37,15 +37,15 @@ module HealthGraph
     end
     
     def connection
-      merged_options = faraday_options.merge({
-        :url => endpoint
+      merged_options = HealthGraph.faraday_options.merge({
+        :url => HealthGraph.endpoint
       })
 
       Faraday.new(merged_options) do |builder|
         builder.use Faraday::Request::UrlEncoded
         builder.use Faraday::Response::Mashify
         builder.use Faraday::Response::ParseJson        
-        builder.adapter(adapter)
+        builder.adapter(HealthGraph.adapter)
       end
     end
   end

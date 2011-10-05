@@ -3,6 +3,11 @@ source "http://rubygems.org"
 # Example:
 #   gem "activesupport", ">= 2.3.5"
 
+gem "oauth2", "= 0.5.1"
+gem "faraday", "= 0.7.4"
+gem "faraday_middleware", "= 0.7.0"
+gem "hashie", "= 1.1.0"
+
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development do

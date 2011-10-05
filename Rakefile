@@ -22,8 +22,10 @@ Jeweler::Tasks.new do |gem|
   gem.email = "kenny@kennyma.me"
   gem.authors = ["Kenny Ma"]
   # dependencies defined in Gemfile
-  gem.add_dependency 'oauth2', '= 0.5.0'
+  gem.add_dependency 'oauth2', '= 0.5.1'
   gem.add_dependency 'faraday', '= 0.7.4'
+  gem.add_dependency 'faraday_middleware', '= 0.7.0'
+  gem.add_dependency 'hashie', '= 1.1.0'
 end
 Jeweler::RubygemsDotOrgTasks.new
 
