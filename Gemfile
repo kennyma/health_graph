@@ -12,6 +12,7 @@ gem "hashie", "= 1.1.0"
 # Include everything needed to run rake, tests, features, etc.
 group :development do
   gem "shoulda", ">= 0"
+  gem "webmock", "= 1.7.4"
   gem "bundler", "~> 1.0.0"
   gem "jeweler", "~> 1.6.4"
   gem "rcov", ">= 0"
