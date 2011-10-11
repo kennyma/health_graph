@@ -1,6 +1,6 @@
 = health_graph
 
-Description goes here.
+Ruby gem to work with RunKeeper Health Graph API. 
 
 == Contributing to health_graph
  
