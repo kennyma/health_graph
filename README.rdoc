@@ -20,11 +20,11 @@ For more information on authentication & authorization, see http://developer.run
 
 === Accessing Health Graph API
 
-user = HealthGraph::User.new(access_token)
-profile = user.profile
-fitness_activities = user.fitness_activities.items
-sleep = user.sleep.items
-weight = user.weight.items
+  user = HealthGraph::User.new(access_token)
+  profile = user.profile
+  fitness_activities = user.fitness_activities.items
+  sleep = user.sleep.items
+  weight = user.weight.items
 
 === Other Configuration options
 
