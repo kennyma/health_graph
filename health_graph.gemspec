@@ -18,7 +18,6 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
-    ".rvmrc",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
@@ -31,6 +30,7 @@ Gem::Specification.new do |s|
     "lib/health_graph/configuration.rb",
     "lib/health_graph/model.rb",
     "lib/health_graph/models/fitness_activities_feed.rb",
+    "lib/health_graph/models/new_fitness_activity.rb",    
     "lib/health_graph/models/profile.rb",
     "lib/health_graph/models/sleep_feed.rb",
     "lib/health_graph/models/user.rb",
