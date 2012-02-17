@@ -13,16 +13,17 @@ module HealthGraph
   
     DEFAULT_CLIENT_ID = nil
     DEFAULT_CLIENT_SECRET = nil
-    DEFAULT_AUTHORIZATION_URL = "http://runkeeper.com/apps/authorize".freeze
-    DEFAULT_ACCESS_TOKEN_URL = "http://runkeeper.com/apps/token".freeze
+    DEFAULT_AUTHORIZATION_URL = "https://runkeeper.com/apps/authorize".freeze
+    DEFAULT_ACCESS_TOKEN_URL = "https://runkeeper.com/apps/token".freeze
     DEFAULT_AUTHORIZATION_REDIRECT_URL = nil
-    DEFAULT_ENDPOINT = "http://api.runkeeper.com".freeze
+    DEFAULT_ENDPOINT = "https://api.runkeeper.com".freeze
     DEFAULT_ADAPTER = :net_http
     DEFAULT_FARADAY_OPTIONS = {}.freeze
     DEFAULT_ACCEPT_HEADERS = {
       :user => "application/vnd.com.runkeeper.User+json",
       :fitness_activity_feed => "application/vnd.com.runkeeper.FitnessActivityFeed+json",
       :fitness_activity => "application/vnd.com.runkeeper.FitnessActivity+json",
+      :new_fitness_activity => "application/vnd.com.runkeeper.NewFitnessActivity+json",      
       :strength_training_activity_feed => "application/vnd.com.runkeeper.StrengthTrainingActivityFeed+json",
       :strength_training_activity => "application/vnd.com.runkeeper.StrengthTrainingActivity+json",    
       :background_activity_feed => "application/vnd.com.runkeeper.BackgroundActivityFeed+json",
@@ -38,8 +39,7 @@ module HealthGraph
       :diabetes_feed => "application/vnd.com.runkeeper.DiabetesFeed+json",
       :diatetes_measurement => "application/vnd.com.runkeeper.DiabetesMeasurement+json",  
       :records => "application/vnd.com.runkeeper.Records+json",
-      :profile => "application/vnd.com.runkeeper.Profile+json",
-      :new_activity => "application/vnd.com.runkeeper.NewFitnessActivity+json"
+      :profile => "application/vnd.com.runkeeper.Profile+json"
     }.freeze
   
     attr_accessor *VALID_OPTIONS_KEYS

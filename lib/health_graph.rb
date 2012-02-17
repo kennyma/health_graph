@@ -9,6 +9,7 @@ require 'health_graph/models/profile'
 require 'health_graph/models/weight_feed'
 require 'health_graph/models/sleep_feed'
 require 'health_graph/models/fitness_activities_feed'
+require 'health_graph/models/new_fitness_activity'
 
 module HealthGraph
   extend Configuration 
