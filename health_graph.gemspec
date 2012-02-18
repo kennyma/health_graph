@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "health_graph"
+  s.name = %q{health_graph}
   s.version = "0.5.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kenny Ma"]
-  s.date = "2012-02-17"
-  s.description = "This is a wrapper for RunKeeper Health Graph RESTful API."
-  s.email = "kenny@kennyma.me"
+  s.date = %q{2012-02-18}
+  s.description = %q{This is a wrapper for RunKeeper Health Graph RESTful API.}
+  s.email = %q{kenny@kennyma.me}
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -40,6 +40,7 @@ Gem::Specification.new do |s|
     "test/fixtures/background_activity.json",
     "test/fixtures/fitness_activities_feed.json",
     "test/fixtures/fitness_activity.json",
+    "test/fixtures/new_fitness_activity_params.json",
     "test/fixtures/profile_get.json",
     "test/fixtures/records.json",
     "test/fixtures/sleep_feed_get.json",
@@ -48,6 +49,7 @@ Gem::Specification.new do |s|
     "test/fixtures/weight_feed_get.json",
     "test/fixtures/weight_get_empty.json",
     "test/health_graph/test_fitness_activities_feed.rb",
+    "test/health_graph/test_new_fitness_activity.rb",
     "test/health_graph/test_profile.rb",
     "test/health_graph/test_sleep_feed.rb",
     "test/health_graph/test_user.rb",
@@ -55,13 +57,14 @@ Gem::Specification.new do |s|
     "test/helper.rb",
     "test/test_health_graph.rb"
   ]
-  s.homepage = "http://github.com/kennyma/health_graph"
+  s.homepage = %q{http://github.com/kennyma/health_graph}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.13"
-  s.summary = "Ruby gem for RunKeeper Health Graph API"
+  s.rubygems_version = %q{1.3.7}
+  s.summary = %q{Ruby gem for RunKeeper Health Graph API}
 
   if s.respond_to? :specification_version then
+    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
