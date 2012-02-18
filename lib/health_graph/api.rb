@@ -21,28 +21,30 @@ module HealthGraph
     private 
     
     def request(method, accept_header, path, params)
-      response = connection.send(method) do |request|
+      response = connection(method).send(method) do |request|
         request.headers['Authorization'] = "Bearer #{access_token}"
-        request.headers['Accept'] = accept_header
         
         case method.to_sym
         when :get, :delete
+          request.headers['Accept'] = accept_header          
           request.url(path, params)
         when :put, :post
+          request.headers['Content-Type'] = accept_header
           request.path = path
-          request.body = params unless params.empty?
+          request.body = params.to_json unless params.empty?
         end        
       end
       response.body
     end
     
-    def connection
+    def connection method
       merged_options = HealthGraph.faraday_options.merge({
         :url => HealthGraph.endpoint
       })
-
+      
       Faraday.new(merged_options) do |builder|
         builder.use Faraday::Request::UrlEncoded
+        builder.use Faraday::Request::JSON if method == :post
         builder.use Faraday::Response::Mashify
         builder.use Faraday::Response::ParseJson        
         builder.adapter(HealthGraph.adapter)

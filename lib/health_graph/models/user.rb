@@ -25,5 +25,9 @@ module HealthGraph
     def fitness_activities
       HealthGraph::FitnessActivitiesFeed.new self.access_token, @body["fitness_activities"]
     end
+    
+    def new_fitness_activity(params)
+      HealthGraph::NewFitnessActivity.new self.access_token, params
+    end
   end
 end

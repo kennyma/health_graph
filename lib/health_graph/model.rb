@@ -30,7 +30,7 @@ module HealthGraph
         set_attr_method = "#{key}="
         unless value.nil?
           if respond_to?(set_attr_method)
-            self.__send__(set_attr_method, value)           
+            self.__send__(set_attr_method, value)
           end
         end
       end
