@@ -34,7 +34,7 @@ module HealthGraph
           request.body = params.to_json unless params.empty?
         end        
       end
-      response.body
+      response
     end
     
     def connection method

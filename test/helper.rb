@@ -22,4 +22,9 @@ class Test::Unit::TestCase
     path = File.expand_path("../fixtures", __FILE__)
     File.new(path + '/' + file)
   end
+  
+  def json_fixture(file)
+    file = fixture(file)
+    JSON.load(file)    
+  end
 end

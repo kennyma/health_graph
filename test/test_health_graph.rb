@@ -27,7 +27,7 @@ class TestHealthGraph < Test::Unit::TestCase
     end
     
     should "get default authorization url" do
-      assert_equal "http://runkeeper.com/apps/authorize", HealthGraph.authorization_url
+      assert_equal "https://runkeeper.com/apps/authorize", HealthGraph.authorization_url
     end
     
     should "set authorization url" do
@@ -37,7 +37,7 @@ class TestHealthGraph < Test::Unit::TestCase
     end
     
     should "get default access token url" do
-      assert_equal "http://runkeeper.com/apps/token", HealthGraph.access_token_url
+      assert_equal "https://runkeeper.com/apps/token", HealthGraph.access_token_url
     end
     
     should "set access token url" do
@@ -57,11 +57,11 @@ class TestHealthGraph < Test::Unit::TestCase
     end
   
     should "get default api endpoint" do
-      assert_equal "http://api.runkeeper.com", HealthGraph.endpoint
+      assert_equal "https://api.runkeeper.com", HealthGraph.endpoint
     end
     
     should "set api endpoont" do
-      new_endpoint = "http://api.somesite.com"
+      new_endpoint = "https://api.somesite.com"
       HealthGraph.endpoint = new_endpoint
       assert_equal new_endpoint, HealthGraph.endpoint      
     end 
@@ -91,6 +91,7 @@ class TestHealthGraph < Test::Unit::TestCase
         :user => "application/vnd.com.runkeeper.User+json",
         :fitness_activity_feed => "application/vnd.com.runkeeper.FitnessActivityFeed+json",
         :fitness_activity => "application/vnd.com.runkeeper.FitnessActivity+json",
+        :new_fitness_activity => "application/vnd.com.runkeeper.NewFitnessActivity+json",      
         :strength_training_activity_feed => "application/vnd.com.runkeeper.StrengthTrainingActivityFeed+json",
         :strength_training_activity => "application/vnd.com.runkeeper.StrengthTrainingActivity+json",    
         :background_activity_feed => "application/vnd.com.runkeeper.BackgroundActivityFeed+json",
@@ -106,8 +107,7 @@ class TestHealthGraph < Test::Unit::TestCase
         :diabetes_feed => "application/vnd.com.runkeeper.DiabetesFeed+json",
         :diatetes_measurement => "application/vnd.com.runkeeper.DiabetesMeasurement+json",  
         :records => "application/vnd.com.runkeeper.Records+json",
-        :profile => "application/vnd.com.runkeeper.Profile+json",
-        :new_activity => "application/vnd.com.runkeeper.NewFitnessActivity+json"
+        :profile => "application/vnd.com.runkeeper.Profile+json"
       }
       
       assert_equal options, HealthGraph.accept_headers

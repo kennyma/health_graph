@@ -1,7 +1,7 @@
 module HealthGraph
   module Model
     include API
-    
+  
     attr_accessor :body
     
     def self.included(includer)
@@ -26,6 +26,8 @@ module HealthGraph
     end
     
     def populate_from_hash!(hash)
+      return unless hash
+      
       hash.each do |key, value|
         set_attr_method = "#{key}="
         unless value.nil?
