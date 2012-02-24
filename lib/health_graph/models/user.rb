@@ -23,11 +23,11 @@ module HealthGraph
       HealthGraph::SleepFeed.new self.access_token, self.body["sleep"]
     end
     
-    def fitness_activities
-      HealthGraph::FitnessActivitiesFeed.new self.access_token, self.body["fitness_activities"]
+    def fitness_activities params
+      HealthGraph::FitnessActivitiesFeed.new self.access_token, self.body["fitness_activities"], params
     end
     
-    def new_fitness_activity(params)
+    def new_fitness_activity params
       HealthGraph::NewFitnessActivity.new self.access_token, params
     end
   end
