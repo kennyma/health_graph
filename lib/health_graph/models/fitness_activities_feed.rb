@@ -14,9 +14,9 @@ module HealthGraph
       end      
     end
                       
-    def initialize(access_token, path)            
+    def initialize(access_token, path, params = {})            
       self.access_token = access_token
-      response = get path, HealthGraph.accept_headers[:fitness_activity_feed]
+      response = get path, HealthGraph.accept_headers[:fitness_activity_feed], params
       self.body = response.body
       populate_from_hash! self.body
     end                           
