@@ -83,7 +83,10 @@ class TestFitnessActivitiesFeed < Test::Unit::TestCase
           assert_equal expected, @user.fitness_activities.items
           assert_equal 5, @user.fitness_activities.items.size
         end              
-              
+        
+        should "get specific number of items" do
+          assert_equal 3, @user.fitness_activities(:pageSize => 3).items.size
+        end
         
         should "get start time" do
           assert_equal "Thu, 15 Sep 2011 13:28:59", @user.fitness_activities.items[0].start_time
