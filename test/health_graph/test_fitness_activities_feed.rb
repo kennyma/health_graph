@@ -10,6 +10,10 @@ class TestFitnessActivitiesFeed < Test::Unit::TestCase
         stub_request(:get, HealthGraph.endpoint + '/fitnessActivities')
         .with(:header => {'Authorization' => 'Bearer ' + TEST_USER_TOKEN, 'Accept' => HealthGraph.accept_headers[:fitness_activities_feed]})
         .to_return(:body => fixture('fitness_activities_feed.json'))
+        
+        stub_request(:get, HealthGraph.endpoint + '/fitnessActivities?pageSize=3')
+          .with(:header => {'Authorization' => 'Bearer ' + TEST_USER_TOKEN, 'Accept' => HealthGraph.accept_headers[:fitness_activities_feed]})
+          .to_return(:body => fixture('fitness_activities_feed.json'))
 
         @user = HealthGraph::User.new(TEST_USER_TOKEN)
       end
@@ -18,6 +22,11 @@ class TestFitnessActivitiesFeed < Test::Unit::TestCase
         activities = @user.fitness_activities
         assert_requested :get,  HealthGraph.endpoint + '/user', :header => {'Authorization' => 'Bearer ' + TEST_USER_TOKEN, 'Accept' => HealthGraph.accept_headers[:user]}, :times => 1
         assert_requested :get,  HealthGraph.endpoint + '/fitnessActivities', :header => {'Authorization' => 'Bearer ' + TEST_USER_TOKEN, 'Accept' => HealthGraph.accept_headers[:fitness_activities_feed]}, :times => 1
+      end
+      
+      should "make request to api with params" do
+        @user.fitness_activities(:pageSize => 3)        
+        assert_requested :get,  HealthGraph.endpoint + '/fitnessActivities?pageSize=3', :header => {'Authorization' => 'Bearer ' + TEST_USER_TOKEN, 'Accept' => HealthGraph.accept_headers[:fitness_activities_feed]}, :times => 1
       end
       
       should "get body" do
@@ -82,11 +91,7 @@ class TestFitnessActivitiesFeed < Test::Unit::TestCase
           
           assert_equal expected, @user.fitness_activities.items
           assert_equal 5, @user.fitness_activities.items.size
-        end              
-        
-        should "get specific number of items" do
-          assert_equal 3, @user.fitness_activities(:pageSize => 3).items.size
-        end
+        end                    
         
         should "get start time" do
           assert_equal "Thu, 15 Sep 2011 13:28:59", @user.fitness_activities.items[0].start_time
