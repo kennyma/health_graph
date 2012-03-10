@@ -7,6 +7,7 @@ gem "oauth2", "= 0.5.2"
 gem "faraday", "= 0.7.4"
 gem "faraday_middleware", "= 0.7.0"
 gem "hashie", "= 1.2"
+gem "json"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.

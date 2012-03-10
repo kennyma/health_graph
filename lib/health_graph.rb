@@ -1,4 +1,5 @@
 require 'oauth2'
+require 'json'
 require 'faraday_middleware'
 require 'health_graph/configuration'
 require 'health_graph/authentication'
@@ -10,6 +11,7 @@ require 'health_graph/models/weight_feed'
 require 'health_graph/models/sleep_feed'
 require 'health_graph/models/fitness_activities_feed'
 require 'health_graph/models/new_fitness_activity'
+require 'health_graph/models/fitness_activity_update'
 
 module HealthGraph
   extend Configuration 
