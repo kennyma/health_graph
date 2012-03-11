@@ -59,13 +59,14 @@ Gem::Specification.new do |s|
     "test/helper.rb",
     "test/test_health_graph.rb"
   ]
-  s.homepage = "http://github.com/kennyma/health_graph"
+  s.homepage = %q{http://github.com/kennyma/health_graph}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.13"
-  s.summary = "Ruby gem for RunKeeper Health Graph API"
+  s.rubygems_version = %q{1.3.7}
+  s.summary = %q{Ruby gem for RunKeeper Health Graph API}
 
   if s.respond_to? :specification_version then
+    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
