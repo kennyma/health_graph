@@ -34,5 +34,9 @@ module HealthGraph
     def fitness_activity_update params
       HealthGraph::FitnessActivityUpdate.new self.access_token, params
     end
+
+    def fitness_activity_delete params
+      HealthGraph::FitnessActivityDelete.new self.access_token, params
+    end
   end
 end

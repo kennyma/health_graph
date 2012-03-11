@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{health_graph}
-  s.version = "0.5.4"
+  s.name = "health_graph"
+  s.version = "0.5.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kenny Ma"]
-  s.date = %q{2012-03-09}
-  s.description = %q{This is a wrapper for RunKeeper Health Graph RESTful API.}
-  s.email = %q{kenny@kennyma.me}
+  s.date = "2012-03-11"
+  s.description = "This is a wrapper for RunKeeper Health Graph RESTful API."
+  s.email = "kenny@kennyma.me"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
     "lib/health_graph/configuration.rb",
     "lib/health_graph/model.rb",
     "lib/health_graph/models/fitness_activities_feed.rb",
+    "lib/health_graph/models/fitness_activity_delete.rb",
     "lib/health_graph/models/fitness_activity_update.rb",
     "lib/health_graph/models/new_fitness_activity.rb",
     "lib/health_graph/models/profile.rb",
