@@ -72,7 +72,7 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency('oauth2', ["~> 0.5.2"])
       s.add_runtime_dependency('faraday', ["~> 0.7.4"])
-      s.add_runtime_dependency('faraday_middleware', ["~> 0.7.0"])
+      s.add_runtime_dependency('faraday_middleware', ["~> 0.8.0"])
       s.add_runtime_dependency('hashie', ["~> 1.2"])
       s.add_runtime_dependency('json', [">= 0"])
       s.add_development_dependency('shoulda', [">= 0"])
@@ -83,7 +83,7 @@ Gem::Specification.new do |s|
     else
       s.add_dependency('oauth2', ["~> 0.5.2"])
       s.add_dependency('faraday', ["~> 0.7.4"])
-      s.add_dependency('faraday_middleware', ["~> 0.7.0"])
+      s.add_dependency('faraday_middleware', ["~> 0.8.0"])
       s.add_dependency('hashie', ["~> 1.2"])
       s.add_dependency('json', [">= 0"])
       s.add_dependency('shoulda', [">= 0"])
@@ -95,7 +95,7 @@ Gem::Specification.new do |s|
   else
     s.add_dependency('oauth2', ["~> 0.5.2"])
     s.add_dependency('faraday', ["~> 0.7.4"])
-    s.add_dependency('faraday_middleware', ["~> 0.7.0"])
+    s.add_dependency('faraday_middleware', ["~> 0.8.0"])
     s.add_dependency('hashie', ["~> 1.2"])
     s.add_dependency('json', [">= 0"])
     s.add_dependency('shoulda', [">= 0"])
