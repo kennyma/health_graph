@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kenny Ma"]
-  s.date = "2012-03-11"
+  s.date = "2012-05-08"
   s.description = "This is a wrapper for RunKeeper Health Graph RESTful API."
   s.email = "kenny@kennyma.me"
   s.extra_rdoc_files = [
@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
     "Gemfile",
-    "Gemfile.lock",
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
