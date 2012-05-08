@@ -58,68 +58,61 @@ Gem::Specification.new do |s|
     "test/helper.rb",
     "test/test_health_graph.rb"
   ]
-  s.homepage = %q{http://github.com/kennyma/health_graph}
+  s.homepage = "http://github.com/kennyma/health_graph"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Ruby gem for RunKeeper Health Graph API}
+  s.rubygems_version = "1.8.15"
+  s.summary = "Ruby gem for RunKeeper Health Graph API"
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<oauth2>, ["= 0.5.2"])
-      s.add_runtime_dependency(%q<faraday>, ["= 0.7.4"])
-      s.add_runtime_dependency(%q<faraday_middleware>, ["= 0.7.0"])
-      s.add_runtime_dependency(%q<hashie>, ["= 1.2"])
-      s.add_runtime_dependency(%q<json>, [">= 0"])
+      s.add_runtime_dependency(%q<health_graph>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
-      s.add_development_dependency(%q<webmock>, ["= 1.7.4"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
-      s.add_development_dependency(%q<rcov>, [">= 0"])
-      s.add_runtime_dependency(%q<oauth2>, ["= 0.5.2"])
-      s.add_runtime_dependency(%q<faraday>, ["= 0.7.4"])
-      s.add_runtime_dependency(%q<faraday_middleware>, ["= 0.7.0"])
-      s.add_runtime_dependency(%q<hashie>, ["= 1.2"])
-      s.add_runtime_dependency(%q<webmock>, ["= 1.7.6"])
-      s.add_runtime_dependency(%q<json>, [">= 0"])
+      s.add_development_dependency(%q<simplecov>, [">= 0"])
+      s.add_development_dependency(%q<shoulda>, [">= 0"])
+      s.add_development_dependency(%q<simplecov>, [">= 0"])
+      s.add_development_dependency(%q<shoulda>, [">= 0"])
+      s.add_development_dependency(%q<simplecov>, [">= 0"])
+      s.add_runtime_dependency(%q<oauth2>, [">= 0.5.2"])
+      s.add_runtime_dependency(%q<faraday>, [">= 0.7.4"])
+      s.add_runtime_dependency(%q<faraday_middleware>, [">= 0.7.8"])
+      s.add_runtime_dependency(%q<hashie>, [">= 1.2"])
+      s.add_runtime_dependency(%q<webmock>, [">= 1.7.6"])
+      s.add_development_dependency(%q<shoulda>, [">= 0"])
+      s.add_development_dependency(%q<simplecov>, [">= 0"])
     else
-      s.add_dependency(%q<oauth2>, ["= 0.5.2"])
-      s.add_dependency(%q<faraday>, ["= 0.7.4"])
-      s.add_dependency(%q<faraday_middleware>, ["= 0.7.0"])
-      s.add_dependency(%q<hashie>, ["= 1.2"])
-      s.add_dependency(%q<json>, [">= 0"])
+      s.add_dependency(%q<health_graph>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
-      s.add_dependency(%q<webmock>, ["= 1.7.4"])
-      s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-      s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
-      s.add_dependency(%q<rcov>, [">= 0"])
-      s.add_dependency(%q<oauth2>, ["= 0.5.2"])
-      s.add_dependency(%q<faraday>, ["= 0.7.4"])
-      s.add_dependency(%q<faraday_middleware>, ["= 0.7.0"])
-      s.add_dependency(%q<hashie>, ["= 1.2"])
-      s.add_dependency(%q<webmock>, ["= 1.7.6"])
-      s.add_dependency(%q<json>, [">= 0"])
+      s.add_dependency(%q<simplecov>, [">= 0"])
+      s.add_dependency(%q<shoulda>, [">= 0"])
+      s.add_dependency(%q<simplecov>, [">= 0"])
+      s.add_dependency(%q<shoulda>, [">= 0"])
+      s.add_dependency(%q<simplecov>, [">= 0"])
+      s.add_dependency(%q<oauth2>, [">= 0.5.2"])
+      s.add_dependency(%q<faraday>, [">= 0.7.4"])
+      s.add_dependency(%q<faraday_middleware>, [">= 0.7.8"])
+      s.add_dependency(%q<hashie>, [">= 1.2"])
+      s.add_dependency(%q<webmock>, [">= 1.7.6"])
+      s.add_dependency(%q<shoulda>, [">= 0"])
+      s.add_dependency(%q<simplecov>, [">= 0"])
     end
   else
-    s.add_dependency(%q<oauth2>, ["= 0.5.2"])
-    s.add_dependency(%q<faraday>, ["= 0.7.4"])
-    s.add_dependency(%q<faraday_middleware>, ["= 0.7.0"])
-    s.add_dependency(%q<hashie>, ["= 1.2"])
-    s.add_dependency(%q<json>, [">= 0"])
+    s.add_dependency(%q<health_graph>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
-    s.add_dependency(%q<webmock>, ["= 1.7.4"])
-    s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-    s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
-    s.add_dependency(%q<rcov>, [">= 0"])
-    s.add_dependency(%q<oauth2>, ["= 0.5.2"])
-    s.add_dependency(%q<faraday>, ["= 0.7.4"])
-    s.add_dependency(%q<faraday_middleware>, ["= 0.7.0"])
-    s.add_dependency(%q<hashie>, ["= 1.2"])
-    s.add_dependency(%q<webmock>, ["= 1.7.6"])
-    s.add_dependency(%q<json>, [">= 0"])
+    s.add_dependency(%q<simplecov>, [">= 0"])
+    s.add_dependency(%q<shoulda>, [">= 0"])
+    s.add_dependency(%q<simplecov>, [">= 0"])
+    s.add_dependency(%q<shoulda>, [">= 0"])
+    s.add_dependency(%q<simplecov>, [">= 0"])
+    s.add_dependency(%q<oauth2>, [">= 0.5.2"])
+    s.add_dependency(%q<faraday>, [">= 0.7.4"])
+    s.add_dependency(%q<faraday_middleware>, [">= 0.7.8"])
+    s.add_dependency(%q<hashie>, [">= 1.2"])
+    s.add_dependency(%q<webmock>, [">= 1.7.6"])
+    s.add_dependency(%q<shoulda>, [">= 0"])
+    s.add_dependency(%q<simplecov>, [">= 0"])
   end
 end
 

@@ -13,7 +13,6 @@ require 'rake'
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "health_graph"
   gem.homepage = "http://github.com/kennyma/health_graph"
   gem.license = "MIT"
@@ -21,13 +20,15 @@ Jeweler::Tasks.new do |gem|
   gem.description = "This is a wrapper for RunKeeper Health Graph RESTful API."
   gem.email = "kenny@kennyma.me"
   gem.authors = ["Kenny Ma"]
-  # dependencies defined in Gemfile
-  gem.add_dependency 'oauth2', '= 0.5.2'
-  gem.add_dependency 'faraday', '= 0.7.4'
-  gem.add_dependency 'faraday_middleware', '= 0.7.0'
-  gem.add_dependency 'hashie', '= 1.2'
-  gem.add_dependency 'webmock', '= 1.7.6'
-  gem.add_dependency 'json'
+
+  gem.add_dependency "oauth2", ">= 0.5.2"
+  gem.add_dependency "faraday", ">= 0.7.4"
+  gem.add_dependency "faraday_middleware", ">= 0.7.8"
+  gem.add_dependency "hashie", ">= 1.2"
+  gem.add_dependency "webmock", ">= 1.7.6"
+
+  gem.add_development_dependency "shoulda"
+  gem.add_development_dependency "simplecov"
 end
 Jeweler::RubygemsDotOrgTasks.new
 
