@@ -20,6 +20,7 @@ Jeweler::Tasks.new do |gem|
 
   gem.add_development_dependency "shoulda"
   gem.add_development_dependency "simplecov"
+  gem.add_development_dependency "jeweler"
 end
 Jeweler::RubygemsDotOrgTasks.new
 
