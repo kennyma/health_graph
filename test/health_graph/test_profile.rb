@@ -3,13 +3,13 @@ require 'helper'
 class TestProfile < Test::Unit::TestCase
   context "profile" do        
     setup do
-      stub_request(:get, HealthGraph.endpoint + '/user')
-      .with(:header => {'Authorization' => 'Bearer ' + TEST_USER_TOKEN, 'Accept' => HealthGraph.accept_headers[:user]})
-      .to_return(:body => fixture('user_get.json'))
+      stub_request(:get, HealthGraph.endpoint + '/user'
+        ).with(:header => {'Authorization' => 'Bearer ' + TEST_USER_TOKEN, 'Accept' => HealthGraph.accept_headers[:user]}
+        ).to_return(:body => fixture('user_get.json'))
       
-      stub_request(:get, HealthGraph.endpoint + '/profile')
-      .with(:header => {'Authorization' => 'Bearer ' + TEST_USER_TOKEN, 'Accept' => HealthGraph.accept_headers[:profile]})
-      .to_return(:body => fixture('profile_get.json'))
+      stub_request(:get, HealthGraph.endpoint + '/profile'
+        ).with(:header => {'Authorization' => 'Bearer ' + TEST_USER_TOKEN, 'Accept' => HealthGraph.accept_headers[:profile]}
+        ).to_return(:body => fixture('profile_get.json'))
       
       @user = HealthGraph::User.new(TEST_USER_TOKEN)      
     end
