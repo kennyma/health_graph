@@ -44,7 +44,7 @@ module HealthGraph
       
       Faraday.new(merged_options) do |builder|
         builder.use Faraday::Request::UrlEncoded
-        builder.use Faraday::Request::JSON if method == :post
+        builder.use FaradayMiddleware::EncodeJson if method == :post
         builder.use Faraday::Response::Mashify
         builder.use Faraday::Response::ParseJson        
         builder.adapter(HealthGraph.adapter)

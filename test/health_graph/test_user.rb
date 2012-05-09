@@ -3,9 +3,9 @@ require 'helper'
 class TestUser < Test::Unit::TestCase  
     context "user" do 
       setup do
-        stub_request(:get, HealthGraph.endpoint + '/user')
-        .with(:header => {'Authorization' => 'Bearer ' + TEST_USER_TOKEN, 'Accept' => HealthGraph.accept_headers[:user]})
-        .to_return(:body => fixture('user_get.json'))
+        stub_request(:get, HealthGraph.endpoint + '/user'
+          ).with(:header => {'Authorization' => 'Bearer ' + TEST_USER_TOKEN, 'Accept' => HealthGraph.accept_headers[:user]}
+          ).to_return(:body => fixture('user_get.json'))
       end
       
       should "make request to api" do
