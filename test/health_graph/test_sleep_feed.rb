@@ -21,40 +21,40 @@ class TestSleepFeed < Test::Unit::TestCase
       end
       
       should "get body" do
-        expected = {"items"=>
-          [{"timestamp"=>"Thu, 22 Sep 2011 00:00:00",
-            "total_sleep"=>822,
-            "uri"=>"/sleep/6253947"},
-           {"timestamp"=>"Thu, 22 Sep 2011 00:00:00",
-            "uri"=>"/sleep/6253948",
-            "times_woken"=>29}],
-         "size"=>2}
-        
+        expected = {
+          "items" => [
+            {
+              "timestamp" => "Thu, 22 Sep 2011 00:00:00",
+              "total_sleep" => 822,
+              "uri" => "/sleep/6253947"
+            }, {
+              "timestamp" => "Thu, 22 Sep 2011 00:00:00",
+              "uri" => "/sleep/6253948",
+              "times_woken" => 29
+            }
+          ],
+          "size" => 2
+        }
+
         assert_equal expected, @user.sleep.body  
       end   
-      
+
       context "item" do
-        should "get items" do 
-          expected = [{"timestamp"=>"Thu, 22 Sep 2011 00:00:00",
-            "total_sleep"=>822,
-            "uri"=>"/sleep/6253947"},
-           {"timestamp"=>"Thu, 22 Sep 2011 00:00:00",
-            "uri"=>"/sleep/6253948",
-            "times_woken"=>29}]
-          
-          assert_equal expected, @user.sleep.items
+        should "get two items" do
           assert_equal 2, @user.sleep.items.size
         end              
-              
+
         should "get timestamp" do
-          assert_equal "Thu, 22 Sep 2011 00:00:00", @user.sleep.items[0].timestamp
+          assert_equal DateTime.new(2011, 9, 22, 0, 0, 0), @user.sleep.items[0].timestamp
         end
-      
-        should "get time sleep" do
+
+        should "get total sleep" do
           assert_equal 822, @user.sleep.items[0].total_sleep
+          assert_equal nil, @user.sleep.items[1].total_sleep
         end
-        
-        should "get time woken" do
+
+        should "get times woken" do
+          assert_equal nil, @user.sleep.items[0].times_woken
           assert_equal 29, @user.sleep.items[1].times_woken
         end
 
