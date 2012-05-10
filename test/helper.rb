@@ -1,6 +1,7 @@
 require 'simplecov'
 SimpleCov.start
 
+require 'date'
 require 'test/unit'
 require 'shoulda'
 require 'webmock/test_unit'

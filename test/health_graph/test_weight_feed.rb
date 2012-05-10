@@ -21,33 +21,31 @@ class TestWeightFeed < Test::Unit::TestCase
       end
       
       should "get body" do
-        expected = {"items"=>
-          [{"timestamp"=>"Mon, 10 Oct 2011 01:31:47",
+        expected = {
+          "items"=>[{
+            "timestamp"=>"Mon, 10 Oct 2011 01:31:47",
             "weight"=>63.502931853253,
-            "uri"=>"/weight/6626834"}],
-         "size"=>1}
-        
+            "uri"=>"/weight/6626834"
+          }],
+          "size"=>1
+        }
+
         assert_equal expected, @user.weight.body  
       end   
       
       context "item" do
-        should "get one item" do 
-          expected = [{"timestamp"=>"Mon, 10 Oct 2011 01:31:47",
-            "weight"=>63.502931853253,
-            "uri"=>"/weight/6626834"}]
-          
-          assert_equal expected, @user.weight.items
+        should "get one item" do
           assert_equal 1, @user.weight.items.size
         end              
-              
+
         should "get timestamp" do
-          assert_equal "Mon, 10 Oct 2011 01:31:47", @user.weight.items[0].timestamp
+          assert_equal DateTime.new(2011, 10, 10, 1, 31, 47), @user.weight.items[0].timestamp
         end
-      
+
         should "get weight" do
           assert_equal 63.502931853253, @user.weight.items[0].weight
         end
-        
+
         should "get uri" do
           assert_equal "/weight/6626834", @user.weight.items[0].uri
         end

@@ -28,8 +28,16 @@ module HealthGraph
     def populate_from_hash!(hash)
       return unless hash
       
-      hash.each do |key, value|
+      hash.each do |key, raw_value|
+        coerce_method = "coerce_#{key}"
         set_attr_method = "#{key}="
+
+        value = if respond_to?(coerce_method)
+          self.__send__(coerce_method, raw_value)
+        else
+          raw_value
+        end
+
         unless value.nil?
           if respond_to?(set_attr_method)
             self.__send__(set_attr_method, value)
