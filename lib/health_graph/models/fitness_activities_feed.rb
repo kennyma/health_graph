@@ -11,14 +11,32 @@ module HealthGraph
       
       def initialize(hash) 
         populate_from_hash! hash
-      end      
+      end
+
+      protected
+
+      def coerce_start_time(value)
+        unless value.is_a? DateTime
+          DateTime.strptime(value, "%a, %d %b %Y %H:%M:%S")
+        else
+          value
+        end
+      end
     end
-                      
+
     def initialize(access_token, path, params = {})            
       self.access_token = access_token
       response = get path, HealthGraph.accept_headers[:fitness_activity_feed], params
       self.body = response.body
       populate_from_hash! self.body
-    end                           
+    end
+
+    protected
+
+    def coerce_items value
+      value.map do |hash|
+        Item.new hash
+      end
+    end
   end
 end
