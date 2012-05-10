@@ -8,19 +8,10 @@ module HealthGraph
       include Model      
 
       hash_attr_accessor :timestamp, :weight, :free_mass, :mass_weight, :fat_percent, :bmi, :uri
+      coerce_key :timestamp, HealthGraph::DateTime
 
       def initialize(hash)
         populate_from_hash! hash
-      end
-
-      protected
-
-      def coerce_timestamp(value)
-        unless value.is_a? DateTime
-          DateTime.strptime(value, "%a, %d %b %Y %H:%M:%S")
-        else
-          value
-        end
       end
     end
 
@@ -28,12 +19,12 @@ module HealthGraph
       self.access_token = access_token
       response = get path, HealthGraph.accept_headers[:weight_feed]
       self.body = response.body
-      populate_from_hash! self.body                  
+      populate_from_hash! self.body
     end
 
     protected
 
-    def coerce_items value
+    def unpack_items value
       value.map do |hash|
         Item.new hash
       end

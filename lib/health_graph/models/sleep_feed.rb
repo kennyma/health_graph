@@ -8,20 +8,11 @@ module HealthGraph
       include Model      
       
       hash_attr_accessor :timestamp, :total_sleep, :times_woken, :rem, :deep, :light, :awake, :uri
-      
+      coerce_key :timestamp, HealthGraph::DateTime
+
       def initialize(hash) 
         populate_from_hash! hash
       end
-      
-      protected
-      
-      def coerce_timestamp(value)
-        unless value.is_a? DateTime
-          DateTime.strptime(value, "%a, %d %b %Y %H:%M:%S")
-        else
-          value
-        end
-      end  
     end
                       
     def initialize(access_token, path)            
@@ -33,7 +24,7 @@ module HealthGraph
 
     protected
 
-    def coerce_items value
+    def unpack_items value
       value.map do |hash|
         Item.new hash
       end
