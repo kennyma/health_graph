@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kenny Ma"]
-  s.date = "2012-05-09"
+  s.date = "2012-05-11"
   s.description = "This is a wrapper for RunKeeper Health Graph RESTful API."
   s.email = "kenny@kennyma.me"
   s.extra_rdoc_files = [
@@ -39,7 +39,9 @@ Gem::Specification.new do |s|
     "lib/health_graph/models/weight_feed.rb",
     "test/fixtures/background_activities_feed.json",
     "test/fixtures/background_activity.json",
-    "test/fixtures/fitness_activities_feed.json",
+    "test/fixtures/fitness_activities_feed/all.json",
+    "test/fixtures/fitness_activities_feed/page_0.json",
+    "test/fixtures/fitness_activities_feed/page_1.json",
     "test/fixtures/fitness_activity.json",
     "test/fixtures/new_fitness_activity_params.json",
     "test/fixtures/profile_get.json",

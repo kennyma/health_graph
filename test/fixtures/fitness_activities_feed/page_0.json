@@ -1,0 +1,23 @@
+{
+  "items": [{
+    "duration": 7920,
+    "total_distance": 62764.416,
+    "start_time": "Thu, 15 Sep 2011 13:28:59",
+    "type": "Cycling",
+    "uri": "/fitnessActivities/52367938"
+  }, {
+    "duration": 1080,
+    "total_distance": 2574.9504,
+    "start_time": "Thu, 15 Sep 2011 08:00:00",
+    "type": "Walking",
+    "uri": "/fitnessActivities/52367984"
+  }, {
+    "duration": 2880,
+    "total_distance": 7402.9824,
+    "start_time": "Wed, 14 Sep 2011 20:00:00",
+    "type": "Running",
+    "uri": "/fitnessActivities/52368041"
+  }],
+  "size": 5,
+  "next": "/fitnessActivities?page=1&pageSize=3"
+}

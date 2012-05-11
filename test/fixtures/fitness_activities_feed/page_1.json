@@ -1,0 +1,17 @@
+{
+  "items": [{
+    "duration": 3060,
+    "total_distance": 7724.8512,
+    "start_time": "Tue, 13 Sep 2011 20:00:00",
+    "type": "Running",
+    "uri": "/fitnessActivities/52368120"
+  }, {
+    "duration": 4500,
+    "total_distance": 5632.704,
+    "start_time": "Tue, 13 Sep 2011 08:00:00",
+    "type": "Running",
+    "uri": "/fitnessActivities/52126193"
+  }],
+  "size": 5,
+  "previous": "/fitnessActivities?page=0&pageSize=3"
+}

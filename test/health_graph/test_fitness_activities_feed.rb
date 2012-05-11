@@ -9,11 +9,17 @@ class TestFitnessActivitiesFeed < Test::Unit::TestCase
 
         stub_request(:get, HealthGraph.endpoint + '/fitnessActivities'
           ).with(:header => {'Authorization' => 'Bearer ' + TEST_USER_TOKEN, 'Accept' => HealthGraph.accept_headers[:fitness_activities_feed]}
-          ).to_return(:body => fixture('fitness_activities_feed.json'))
+          ).to_return(:body => fixture('fitness_activities_feed/all.json'))
         
         stub_request(:get, HealthGraph.endpoint + '/fitnessActivities?pageSize=3'
           ).with(:header => {'Authorization' => 'Bearer ' + TEST_USER_TOKEN, 'Accept' => HealthGraph.accept_headers[:fitness_activities_feed]}
-          ).to_return(:body => fixture('fitness_activities_feed.json'))
+          ).to_return(:body => fixture('fitness_activities_feed/page_0.json'))
+
+        stub_request(:get, HealthGraph.endpoint + '/fitnessActivities?pageSize=3&page=0'
+          ).to_return(:body => fixture('fitness_activities_feed/page_0.json'))
+
+        stub_request(:get, HealthGraph.endpoint + '/fitnessActivities?pageSize=3&page=1'
+          ).to_return(:body => fixture('fitness_activities_feed/page_1.json'))
 
         @user = HealthGraph::User.new(TEST_USER_TOKEN)
       end
@@ -59,8 +65,27 @@ class TestFitnessActivitiesFeed < Test::Unit::TestCase
          "size"=>5}
         
         assert_equal expected, @user.fitness_activities.body  
-      end   
-      
+      end
+
+      context "pagination" do
+        should "get the next page" do
+          page_1 = @user.fitness_activities(:pageSize=>3).next_page
+          assert_requested :get,  HealthGraph.endpoint + '/fitnessActivities?pageSize=3&page=1'
+          assert_equal 2, page_1.items.length
+        end
+
+        should "get the previous page" do
+          page_0 = @user.fitness_activities(:pageSize=>3, :page=>1).previous_page
+          assert_requested :get,  HealthGraph.endpoint + '/fitnessActivities?pageSize=3&page=0'
+          assert_equal 3, page_0.items.length
+        end
+
+        should "return nil when there are no more pages" do
+          assert_nil @user.fitness_activities.previous_page
+          assert_nil @user.fitness_activities.next_page
+        end
+      end
+
       context "item" do
         should "get items" do 
           expected = [{"duration"=>7920,
