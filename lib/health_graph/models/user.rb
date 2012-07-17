@@ -15,6 +15,10 @@ module HealthGraph
       HealthGraph::Profile.new self.access_token, self.body["profile"]      
     end        
     
+    def settings
+      HealthGraph::Settings.new self.access_token, self.body["settings"]
+    end
+    
     def weight
       HealthGraph::WeightFeed.new self.access_token, self.body["weight"]
     end
