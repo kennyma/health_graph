@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "health_graph"
-  s.version = "0.5.6"
+  s.version = "0.6.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Kenny Ma"]
-  s.date = "2012-05-09"
+  s.date = "2012-07-17"
   s.description = "This is a wrapper for RunKeeper Health Graph RESTful API."
   s.email = "kenny@kennyma.me"
   s.extra_rdoc_files = [
@@ -34,7 +34,10 @@ Gem::Specification.new do |s|
     "lib/health_graph/models/fitness_activity_update.rb",
     "lib/health_graph/models/new_fitness_activity.rb",
     "lib/health_graph/models/profile.rb",
+    "lib/health_graph/models/settings.rb",
     "lib/health_graph/models/sleep_feed.rb",
+    "lib/health_graph/models/strength_training_activities_feed.rb",
+    "lib/health_graph/models/strength_training_activity.rb",
     "lib/health_graph/models/user.rb",
     "lib/health_graph/models/weight_feed.rb",
     "test/fixtures/background_activities_feed.json",
@@ -61,7 +64,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/kennyma/health_graph"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.24"
+  s.rubygems_version = "1.8.13"
   s.summary = "Ruby gem for RunKeeper Health Graph API"
 
   if s.respond_to? :specification_version then
@@ -69,6 +72,15 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<health_graph>, [">= 0"])
+      s.add_development_dependency(%q<shoulda>, [">= 0"])
+      s.add_development_dependency(%q<simplecov>, [">= 0"])
+      s.add_development_dependency(%q<jeweler>, [">= 0"])
+      s.add_development_dependency(%q<shoulda>, [">= 0"])
+      s.add_development_dependency(%q<simplecov>, [">= 0"])
+      s.add_development_dependency(%q<jeweler>, [">= 0"])
+      s.add_development_dependency(%q<shoulda>, [">= 0"])
+      s.add_development_dependency(%q<simplecov>, [">= 0"])
+      s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<simplecov>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
@@ -85,6 +97,15 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<simplecov>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
+      s.add_dependency(%q<shoulda>, [">= 0"])
+      s.add_dependency(%q<simplecov>, [">= 0"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
+      s.add_dependency(%q<shoulda>, [">= 0"])
+      s.add_dependency(%q<simplecov>, [">= 0"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
+      s.add_dependency(%q<shoulda>, [">= 0"])
+      s.add_dependency(%q<simplecov>, [">= 0"])
+      s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<oauth2>, [">= 0.5.2"])
       s.add_dependency(%q<faraday>, [">= 0.7.4"])
       s.add_dependency(%q<faraday_middleware>, [">= 0.7.8"])
@@ -96,6 +117,15 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<health_graph>, [">= 0"])
+    s.add_dependency(%q<shoulda>, [">= 0"])
+    s.add_dependency(%q<simplecov>, [">= 0"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
+    s.add_dependency(%q<shoulda>, [">= 0"])
+    s.add_dependency(%q<simplecov>, [">= 0"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
+    s.add_dependency(%q<shoulda>, [">= 0"])
+    s.add_dependency(%q<simplecov>, [">= 0"])
+    s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<simplecov>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
