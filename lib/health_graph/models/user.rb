@@ -15,6 +15,10 @@ module HealthGraph
       HealthGraph::Profile.new self.access_token, self.body["profile"]      
     end        
     
+    def settings
+      HealthGraph::Settings.new self.access_token, self.body["settings"]
+    end
+    
     def weight
       HealthGraph::WeightFeed.new self.access_token, self.body["weight"]
     end
@@ -37,6 +41,10 @@ module HealthGraph
 
     def fitness_activity_delete params
       HealthGraph::FitnessActivityDelete.new self.access_token, params
+    end
+    
+    def strength_training_activities params = {}
+      HealthGraph::StrengthTrainingActivitiesFeed.new self.access_token, self.body["strength_training_activities"], params
     end
   end
 end
