@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     "README.rdoc",
     "Rakefile",
     "VERSION",
+    "health_graph.gemspec",
     "lib/health_graph.rb",
     "lib/health_graph/api.rb",
     "lib/health_graph/authentication.rb",
