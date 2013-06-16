@@ -1,5 +1,6 @@
 = health_graph
 
+[![Build Status](https://secure.travis-ci.org/kennyma/health_graph.png?branch=master)](http://travis-ci.org/kennyma/health_graph?branch=master)
 Ruby gem to work with RunKeeper Health Graph API.  More information about RunKeeper Health Graph API http://developer.runkeeper.com/healthgraph.
 
 == Usage
