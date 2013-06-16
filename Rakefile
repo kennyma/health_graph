@@ -11,16 +11,6 @@ Jeweler::Tasks.new do |gem|
   gem.description = "This is a wrapper for RunKeeper Health Graph RESTful API."
   gem.email = "kenny@kennyma.me"
   gem.authors = ["Kenny Ma"]
-
-  gem.add_dependency "oauth2", ">= 0.5.2"
-  gem.add_dependency "faraday", ">= 0.7.4"
-  gem.add_dependency "faraday_middleware", ">= 0.7.8"
-  gem.add_dependency "hashie", ">= 1.2"
-  gem.add_dependency "webmock", ">= 1.7.6"
-
-  gem.add_development_dependency "shoulda"
-  gem.add_development_dependency "simplecov"
-  gem.add_development_dependency "jeweler"
 end
 Jeweler::RubygemsDotOrgTasks.new
 
