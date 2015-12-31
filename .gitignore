@@ -48,3 +48,6 @@ pkg
 
 # For rubinius:
 #*.rbc
+
+# Don't commit gems
+*.gem
