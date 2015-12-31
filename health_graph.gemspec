@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |spec|
   spec.name = "health_graph"
-  spec.version = "0.6.0"
+  spec.version = "0.7.0"
   spec.authors = ["Kenny Ma"]
   spec.email = "kenny@kennyma.me"
   spec.date = "2012-07-17"
@@ -33,4 +33,3 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "simplecov"
   spec.add_development_dependency "pry"
 end
-
