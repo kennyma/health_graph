@@ -5,10 +5,10 @@
 
 Gem::Specification.new do |spec|
   spec.name = "health_graph"
-  spec.version = "0.7.0"
+  spec.version = "0.7.1"
   spec.authors = ["Kenny Ma"]
   spec.email = "kenny@kennyma.me"
-  spec.date = "2012-07-17"
+  spec.date = "2015-12-31"
   spec.description = "This is a wrapper for RunKeeper Health Graph RESTful API."
   spec.summary = "Ruby gem for RunKeeper Health Graph API"
   spec.homepage = "http://github.com/kennyma/health_graph"

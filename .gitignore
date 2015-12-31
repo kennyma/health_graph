@@ -1,5 +1,5 @@
 Gemfile.lock
-health-graph-*.gem
+health_graph-*.gem
 # rcov generated
 coverage
 
