@@ -20,5 +20,13 @@ module HealthGraph
       self.body = response.body
       populate_from_hash! body
     end
+
+    def previous_page
+      self.class.new(access_token, self.previous)
+    end
+
+    def next_page
+      self.class.new(access_token, self.next)
+    end
   end
 end
