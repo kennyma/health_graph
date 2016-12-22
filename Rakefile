@@ -1,6 +1,6 @@
-require "bundler/gem_tasks"
+require 'bundler/gem_tasks'
 
-desc "Run all tests"
+desc 'Run all tests'
 task :test do
-  ruby("test/test_health_graph.rb")
+  ruby('test/test_health_graph.rb')
 end
